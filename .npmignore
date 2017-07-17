@@ -1,0 +1,17 @@
+android
+gen
+ios
+modules
+node_modules
+web
+.babelrc
+.buckconfig
+.flowconfig
+.gitattributes
+.gitignore
+.watchmanconfig
+app.js
+app.json
+index.*.js
+RnDecorator.js
+yarn.lock

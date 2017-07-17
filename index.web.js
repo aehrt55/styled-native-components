@@ -4,7 +4,9 @@
  * @flow
  */
 
-import { AppRegistry } from 'react-native';
+import RnElements, { AppRegistry } from 'react-native';
+import styled from 'styled-components';
+import RnDecorator from './RnDecorator';
 import App from './app'
 
 // Sets up offline caching for all assets (disabled by default)
@@ -14,7 +16,9 @@ if (__OFFLINE__) {
   require('offline-plugin/runtime').install()
 }
 
-AppRegistry.registerComponent('ExampleApp', () => App);
+const DecoratedApp = RnDecorator({ RnElements, styled })(App);
+
+AppRegistry.registerComponent('ExampleApp', () => DecoratedApp);
 AppRegistry.runApplication('ExampleApp', {
   rootTag: window.document.getElementById('react-root'),
 });
